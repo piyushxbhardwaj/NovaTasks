@@ -44,7 +44,7 @@ const TaskCard = ({ task, onToggleStatus, onEdit, onDelete }) => {
       <div className="flex items-start space-x-3.5">
         <button
           onClick={() => onToggleStatus(task)}
-          className={`mt-1 h-5 w-5 shrink-0 rounded-full transition-colors ${
+          className={`mt-1 h-5 w-5 shrink-0 rounded-full transition-all duration-150 hover:scale-110 active:scale-95 ${
             isCompleted 
               ? 'text-emerald-500 hover:text-emerald-600 dark:text-emerald-400' 
               : 'text-slate-300 hover:text-brand-500 dark:text-slate-700'

@@ -124,7 +124,7 @@ NovaTasks/
    ```env
    SECRET_KEY=your-production-secret-key-change-this
    ACCESS_TOKEN_EXPIRE_MINUTES=60
-   FRONTEND_URL=http://localhost:5173
+   For production (Render), set:  FRONTEND_URL=https://nova-tasks-phi.vercel.app
    ```
 6. Run the FastAPI development server:
    ```bash

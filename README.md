@@ -33,6 +33,14 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 ---
 
+## Technical Stack
+
+- **Frontend:** **React 19 + Vite** – Modern frontend library with Vite for fast development and optimized builds, incorporating Tailwind CSS, React Router v6, TanStack Query v5, React Hook Form, Zod, Axios, React Hot Toast, and Lucide React.
+- **Backend:** **FastAPI** – High-performance ASGI framework incorporating SQLAlchemy ORM, SQLite database, python-jose, and passlib (bcrypt) for authentication.
+- **Deployment:** Vercel (Frontend), Render (Backend)
+
+---
+
 ## Screenshots
 
 *(Upload your captured app images to the `/docs` directory inside the repository to display them here)*
@@ -47,14 +55,6 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 | Login Page | Register Page |
 | :---: | :---: |
 | ![Login UI](docs/login.png) | ![Register UI](docs/register.png) |
-
----
-
-## Technical Stack
-
-- **Frontend:** **React 19 + Vite** – Modern frontend library with Vite for fast development and optimized builds, incorporating Tailwind CSS, React Router v6, TanStack Query v5, React Hook Form, Zod, Axios, React Hot Toast, and Lucide React.
-- **Backend:** **FastAPI** – High-performance ASGI framework incorporating SQLAlchemy ORM, SQLite database, python-jose, and passlib (bcrypt) for authentication.
-- **Deployment:** Vercel (Frontend), Render (Backend)
 
 ---
 

@@ -6,12 +6,7 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 ## Technical Badges
 
-![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?style=flat-square&logo=fastapi)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?style=flat-square&logo=tailwind-css)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-red?style=flat-square)
-![SQLite](https://img.shields.io/badge/SQLite-3-blue?style=flat-square&logo=sqlite)
-![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+[![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)](https://react.dev) [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com) [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?style=flat-square&logo=tailwind-css)](https://tailwindcss.com) [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-red?style=flat-square)](https://www.sqlalchemy.org) [![SQLite](https://img.shields.io/badge/SQLite-3-blue?style=flat-square&logo=sqlite)](https://www.sqlite.org) [![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
 
@@ -27,13 +22,13 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 - **Secure JWT Authentication:** Session sign-up, sign-in, and sign-out logic with password salting (`passlib`/`bcrypt`) and bearer token guards.
 - **Complete Task Management:** Create, update, complete, search, filter, and delete tasks.
-- **Analytics Stats Summary:** Live counter cards showing total, pending, and completed tasks.
+- **Dashboard Statistics:** Live counter cards showing total, pending, and completed tasks.
 - **Interactive Productivity Tools:**
   - *Debounced Search:* Real-time searching of task titles and descriptions.
   - *Status Filter Tabs:* Group views for All, Pending, and Completed tasks.
   - *Priority Badging:* Sort views for Low, Medium, and High categories.
   - *Advanced Sorting:* Order tasks dynamically by date created, due date, priority, or alphabetical order.
-- **Rich Polish & Dark Mode:** Responsive layout with dark/light mode toggle persistent across sessions.
+- **Responsive UI & Dark Mode:** Responsive layout with dark/light mode toggle persistent across sessions.
 - **UX Confirmations & Toasts:** Actions such as deletion prompt verification modal dialogs; operations display feedback notifications via `react-hot-toast`.
 
 ---

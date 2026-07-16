@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { X, Calendar, AlertTriangle, Loader2 } from 'lucide-react';
+import { X, Loader2 } from 'lucide-react';
 
 const taskSchema = z.object({
   title: z.string().min(1, 'Title is required').max(100, 'Title cannot exceed 100 characters'),
@@ -33,7 +33,6 @@ const TaskForm = ({ isOpen, onClose, onSubmit, initialData = null }) => {
   const {
     register,
     handleSubmit,
-    setValue,
     reset,
     formState: { errors, isSubmitting },
   } = useForm({

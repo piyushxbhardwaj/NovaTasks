@@ -74,7 +74,7 @@ const Dashboard = () => {
     sort_order: sortOrder,
   };
 
-  const { data: apiResponse, isLoading, isError, refetch, isFetching } = useQuery({
+  const { data: apiResponse, isLoading, isError, refetch } = useQuery({
     queryKey: ['tasks', queryParams],
     queryFn: () => getTasks(queryParams),
   });

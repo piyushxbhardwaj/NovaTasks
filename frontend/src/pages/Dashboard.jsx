@@ -54,6 +54,17 @@ const Dashboard = () => {
     }
   }, [darkMode]);
 
+  const hasActiveFilters = !!(search || statusFilter !== 'all' || priorityFilter !== 'all' || sortBy !== 'created_at' || sortOrder !== 'desc');
+
+  const handleClearFilters = () => {
+    setSearch('');
+    setStatusFilter('all');
+    setPriorityFilter('all');
+    setSortBy('created_at');
+    setSortOrder('desc');
+    toast.success('Filters reset');
+  };
+
   // Fetch tasks query
   const queryParams = {
     search: debouncedSearch || undefined,
@@ -233,9 +244,17 @@ const Dashboard = () => {
             <div className="flex flex-wrap items-center gap-3">
               <div className="flex items-center space-x-1.5">
                 <SlidersHorizontal className="h-4 w-4 text-slate-400" />
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider dark:text-slate-455">
+                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider dark:text-slate-400">
                   Filters:
                 </span>
+                {hasActiveFilters && (
+                  <button
+                    onClick={handleClearFilters}
+                    className="rounded-lg bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-600 hover:bg-indigo-100 dark:bg-indigo-950/40 dark:text-indigo-450 dark:hover:bg-indigo-950/70 transition-colors"
+                  >
+                    Reset
+                  </button>
+                )}
               </div>
 
               {/* Priority Filter */}

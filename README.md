@@ -17,8 +17,8 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 ## Live Demo Links
 
-- **Frontend App:** [https://novatasks.vercel.app](https://novatasks.vercel.app) *(Replace with your Vercel deployment URL)*
-- **Backend API:** [https://novatasks-api.onrender.com](https://novatasks-api.onrender.com) *(Replace with your Render deployment URL)*
+- **Frontend App:** [https://novatasks.vercel.app](https://novatasks.vercel.app)
+- **Backend API:** [https://novatasks-api.onrender.com](https://novatasks-api.onrender.com)
 - **Interactive Documentation:** [https://novatasks-api.onrender.com/docs](https://novatasks-api.onrender.com/docs) *(Swagger UI docs)*
 
 ---
@@ -26,13 +26,13 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 ## Key Features
 
 - **Secure JWT Authentication:** Session sign-up, sign-in, and sign-out logic with password salting (`passlib`/`bcrypt`) and bearer token guards.
-- **Task CRUD Operations:** Complete support for creating, updating, completing, and deleting tasks.
+- **Complete Task Management:** Create, update, complete, search, filter, and delete tasks.
 - **Analytics Stats Summary:** Live counter cards showing total, pending, and completed tasks.
 - **Interactive Productivity Tools:**
   - *Debounced Search:* Real-time searching of task titles and descriptions.
   - *Status Filter Tabs:* Group views for All, Pending, and Completed tasks.
-  - *Priority badging:* Sort views for Low, Medium, and High categories.
-  - *Advanced sorting:* Order tasks dynamically by date created, due date, priority, or alphabetical order.
+  - *Priority Badging:* Sort views for Low, Medium, and High categories.
+  - *Advanced Sorting:* Order tasks dynamically by date created, due date, priority, or alphabetical order.
 - **Rich Polish & Dark Mode:** Responsive layout with dark/light mode toggle persistent across sessions.
 - **UX Confirmations & Toasts:** Actions such as deletion prompt verification modal dialogs; operations display feedback notifications via `react-hot-toast`.
 
@@ -40,7 +40,7 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 ## Screenshots
 
-*(Upload your captured app images to a `/docs` directory inside the repository to display them here)*
+*(Upload your captured app images to the `/docs` directory inside the repository to display them here)*
 
 ### 1. Light Theme Workspace
 ![Light Theme Dashboard](docs/dashboard-light.png)
@@ -55,30 +55,10 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 
 ---
 
-## Database Entity Relationship Diagram
-
-```text
-  +------------------+          +-------------------+
-  |      USERS       |          |      TASKS        |
-  +------------------+          +-------------------+
-  | id (PK, Int)     |          | id (PK, Int)      |
-  | email (Unique)   |--------->| owner_id (FK)     |
-  | hashed_password  |          | title (Varchar)   |
-  | is_active (Bool) |          | description (Text)|
-  +------------------+          | status (Varchar)  |
-                                | priority (Varchar)|
-                                | due_date (DateTime|
-                                | created_at        |
-                                | updated_at        |
-                                +-------------------+
-```
-
----
-
 ## Technical Stack
 
-- **Frontend:** React 19, Vite, Tailwind CSS, React Router v6, TanStack Query v5, React Hook Form, Zod, Axios, React Hot Toast, Lucide React
-- **Backend:** FastAPI, SQLAlchemy ORM, SQLite, python-jose, passlib (bcrypt), Pydantic v2
+- **Frontend:** **React 19 + Vite** – Modern frontend library with Vite for fast development and optimized builds, incorporating Tailwind CSS, React Router v6, TanStack Query v5, React Hook Form, Zod, Axios, React Hot Toast, and Lucide React.
+- **Backend:** **FastAPI** – High-performance ASGI framework incorporating SQLAlchemy ORM, SQLite database, python-jose, and passlib (bcrypt) for authentication.
 - **Deployment:** Vercel (Frontend), Render (Backend)
 
 ---
@@ -198,6 +178,26 @@ All paths are prefixed by `/api/v1`.
 - **`POST /tasks`** - Create a new task.
 - **`PUT /tasks/{id}`** - Updates details or toggles completion status.
 - **`DELETE /tasks/{id}`** - Deletes a task.
+
+---
+
+## Database Entity Relationship Diagram
+
+```text
+  +------------------+          +-------------------+
+  |      USERS       |          |      TASKS        |
+  +------------------+          +-------------------+
+  | id (PK, Int)     |          | id (PK, Int)      |
+  | email (Unique)   |--------->| owner_id (FK)     |
+  | hashed_password  |          | title (Varchar)   |
+  | is_active (Bool) |          | description (Text)|
+  +------------------+          | status (Varchar)  |
+                                | priority (Varchar)|
+                                | due_date (DateTime|
+                                | created_at        |
+                                | updated_at        |
+                                +-------------------+
+```
 
 ---
 

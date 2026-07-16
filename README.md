@@ -1,25 +1,85 @@
 # NovaTasks - Modern Task Management Application
 
-NovaTasks is a production-quality, responsive full-stack task management application. The app offers user authentication via JSON Web Tokens (JWT) and complete CRUD operations for tasks with real-time searching, category status filtering (All, Pending, Completed), sorting by due dates/creation dates, priority badge categorization (High, Medium, Low), and dark/light theme persistence.
+NovaTasks is a production-quality, responsive full-stack task management application. The app offers secure user authentication via JSON Web Tokens (JWT) and complete CRUD operations for tasks with real-time searching, category status tabs, priority categorization, sorting parameters, and a persistent dark/light interface theme.
 
 ---
 
-## Technical Architecture
+## Technical Badges
 
-### Frontend
-- **React 19** & **Vite** (Next-generation React framework and bundling tool)
-- **Tailwind CSS** (Utility-first styling with persistent dark/light styling states)
-- **React Router v6** (Client-side routing with Public and Protected page guards)
-- **TanStack Query v5 (React Query)** (Server-state caching, fetching, and background invalidations)
-- **React Hook Form** & **Zod** (State validation and error tracking)
-- **Axios** (Promise-based API requests with automated JWT header insertion interceptors)
-- **React Hot Toast** & **Lucide React** (Rich aesthetic feedback and system icons)
+![React](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.110-green?style=flat-square&logo=fastapi)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?style=flat-square&logo=tailwind-css)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-2.0-red?style=flat-square)
+![SQLite](https://img.shields.io/badge/SQLite-3-blue?style=flat-square&logo=sqlite)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
 
-### Backend
-- **FastAPI** (High-performance ASGI framework with Pydantic v2 validation)
-- **SQLAlchemy ORM** & **SQLite** (Declarative relational database persistence)
-- **JWT (python-jose & passlib[bcrypt])** (Secure token issuance, verification, and password hashing)
-- **CORS Middleware** (Configured to support communication between frontend and backend hosts)
+---
+
+## Live Demo Links
+
+- **Frontend App:** [https://novatasks.vercel.app](https://novatasks.vercel.app) *(Replace with your Vercel deployment URL)*
+- **Backend API:** [https://novatasks-api.onrender.com](https://novatasks-api.onrender.com) *(Replace with your Render deployment URL)*
+- **Interactive Documentation:** [https://novatasks-api.onrender.com/docs](https://novatasks-api.onrender.com/docs) *(Swagger UI docs)*
+
+---
+
+## Key Features
+
+- **Secure JWT Authentication:** Session sign-up, sign-in, and sign-out logic with password salting (`passlib`/`bcrypt`) and bearer token guards.
+- **Task CRUD Operations:** Complete support for creating, updating, completing, and deleting tasks.
+- **Analytics Stats Summary:** Live counter cards showing total, pending, and completed tasks.
+- **Interactive Productivity Tools:**
+  - *Debounced Search:* Real-time searching of task titles and descriptions.
+  - *Status Filter Tabs:* Group views for All, Pending, and Completed tasks.
+  - *Priority badging:* Sort views for Low, Medium, and High categories.
+  - *Advanced sorting:* Order tasks dynamically by date created, due date, priority, or alphabetical order.
+- **Rich Polish & Dark Mode:** Responsive layout with dark/light mode toggle persistent across sessions.
+- **UX Confirmations & Toasts:** Actions such as deletion prompt verification modal dialogs; operations display feedback notifications via `react-hot-toast`.
+
+---
+
+## Screenshots
+
+*(Upload your captured app images to a `/docs` directory inside the repository to display them here)*
+
+### 1. Light Theme Workspace
+![Light Theme Dashboard](docs/dashboard-light.png)
+
+### 2. Dark Theme Workspace
+![Dark Theme Dashboard](docs/dashboard-dark.png)
+
+### 3. Login & Signup Modals
+| Login Page | Register Page |
+| :---: | :---: |
+| ![Login UI](docs/login.png) | ![Register UI](docs/register.png) |
+
+---
+
+## Database Entity Relationship Diagram
+
+```text
+  +------------------+          +-------------------+
+  |      USERS       |          |      TASKS        |
+  +------------------+          +-------------------+
+  | id (PK, Int)     |          | id (PK, Int)      |
+  | email (Unique)   |--------->| owner_id (FK)     |
+  | hashed_password  |          | title (Varchar)   |
+  | is_active (Bool) |          | description (Text)|
+  +------------------+          | status (Varchar)  |
+                                | priority (Varchar)|
+                                | due_date (DateTime|
+                                | created_at        |
+                                | updated_at        |
+                                +-------------------+
+```
+
+---
+
+## Technical Stack
+
+- **Frontend:** React 19, Vite, Tailwind CSS, React Router v6, TanStack Query v5, React Hook Form, Zod, Axios, React Hot Toast, Lucide React
+- **Backend:** FastAPI, SQLAlchemy ORM, SQLite, python-jose, passlib (bcrypt), Pydantic v2
+- **Deployment:** Vercel (Frontend), Render (Backend)
 
 ---
 
@@ -138,3 +198,14 @@ All paths are prefixed by `/api/v1`.
 - **`POST /tasks`** - Create a new task.
 - **`PUT /tasks/{id}`** - Updates details or toggles completion status.
 - **`DELETE /tasks/{id}`** - Deletes a task.
+
+---
+
+## Future Improvements
+
+- **Email Verification:** Mandate account activation via validation links.
+- **Password Reset Flows:** Secure self-service recovery via email verification tokens.
+- **Team Workspaces:** Collaborative boards supporting task assignments, shared lists, and team-based view filters.
+- **Task Attachments:** Upload supporting media, files, or links directly to task descriptions.
+- **Real-time Event Notifications:** Push alert summaries or daily digests for due/overdue items.
+- **Subtasks Lifecycle:** Expand task details to support child checklists and nested step trackers.

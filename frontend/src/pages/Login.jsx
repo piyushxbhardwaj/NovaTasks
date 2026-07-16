@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 import { Mail, Lock, Loader2, ListTodo } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { loginSchema } from '../utils/validation';
+import { getErrorMessage } from '../utils/errors';
 
 const Login = () => {
   const { login } = useAuth();
@@ -35,7 +36,7 @@ const Login = () => {
         toast.error(res.message || 'Incorrect email or password');
       }
     } catch (err) {
-      toast.error('An unexpected error occurred. Please try again.');
+      toast.error(getErrorMessage(err));
     } finally {
       setSubmitting(false);
     }

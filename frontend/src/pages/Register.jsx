@@ -6,6 +6,7 @@ import { toast } from 'react-hot-toast';
 import { Mail, Lock, Loader2, ListTodo } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { registerSchema } from '../utils/validation';
+import { getErrorMessage } from '../utils/errors';
 
 const Register = () => {
   const { register: signup } = useAuth();
@@ -36,7 +37,7 @@ const Register = () => {
         toast.error(res.message || 'Registration failed');
       }
     } catch (err) {
-      toast.error('An unexpected error occurred. Please try again.');
+      toast.error(getErrorMessage(err));
     } finally {
       setSubmitting(false);
     }

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: novatasks-api
+    runtime: python
+    buildCommand: "pip install -r backend/requirements.txt"
+    startCommand: "cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 60
+      - key: DATABASE_URL
+        value: sqlite:///./novatasks.db
+      - key: FRONTEND_URL
+        value: https://novatasks.vercel.app  # Change this to your vercel deployment URL

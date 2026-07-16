@@ -13,8 +13,8 @@ NovaTasks is a production-quality, responsive full-stack task management applica
 ## Live Demo Links
 
 - **Frontend App:** [https://novatasks.vercel.app](https://novatasks.vercel.app)
-- **Backend API:** [https://novatasks-api.onrender.com](https://novatasks-api.onrender.com)
-- **Interactive Documentation:** [https://novatasks-api.onrender.com/docs](https://novatasks-api.onrender.com/docs) *(Swagger UI docs)*
+- **Backend API:** [https://novatasks-e728.onrender.com](https://novatasks-e728.onrender.com)
+- **Interactive Documentation:** [https://novatasks-e728.onrender.com/docs](https://novatasks-e728.onrender.com/docs) *(Swagger UI docs)*
 
 ---
 
